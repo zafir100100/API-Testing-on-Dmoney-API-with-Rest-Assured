@@ -1,43 +1,52 @@
-# Rest-Assured-Dmoney-API-Testing
+# API-Testing-on-Dmoney-API-with-Rest-Assured
 
+## What is Rest Assured in API Automation?
 
-## Technology and Tool Used
-- rest-assured
+Rest Assured is an open-source Java library used to test RESTful APIs. It provides a domain-specific language (DSL) for writing API tests in a simple and readable format. Rest Assured supports various HTTP methods such as GET, POST, PUT, DELETE, etc., and allows us to set request headers, query parameters, and request bodies. It also provides easy-to-use assertion methods to validate the response received from the server. Rest Assured is widely used in the industry for API testing due to its simplicity and effectiveness.
+
+## Why Rest Assured is popular choice for API Testing?
+
+There are several reasons why Rest Assured is a popular choice for API testing:
+
+- Easy to Use: Rest Assured provides a simple and intuitive syntax for writing API tests, making it easy for both developers and testers to use.
+
+- Comprehensive Functionality: Rest Assured supports various HTTP methods and provides a wide range of assertions, making it easy to test various aspects of an API such as response status codes, response headers, response body, and more.
+
+- Integration: Rest Assured can be easily integrated with popular testing frameworks like JUnit and TestNG, making it easy to incorporate API tests into existing test suites.
+
+- Automation: Rest Assured allows for the automation of API tests, which can save time and resources by automating repetitive tasks and increasing test coverage.
+
+- Open-source: Rest Assured is an open-source library, which means it's free to use and has an active community of developers contributing to its development and maintenance.
+
+## Technology Used:
+
+- Rest Assured
 - commons-configuration
-- jackson-databind
+- Jackson Databind
 - TestNG
 - Java
 - Gradle
-- intellij idea 
+- intellij idea
+- Allure
 
-## Scenerio
-##### Collection:
-##### https://api.postman.com/collections/1844288-143eb923-423f-4c91-a198-fe6e56d20e35?access_key=PMAT-01GJ3CC22Q0066PJWP3T0XHQ8G
-1. Create a customer and agent
-2. Login with the customer
-3. Update phone number of the customer
-4 Give 2000 tk to the agent from System account
-5. Cash in tk 1000 to the customer  from the agent account
-6. Check balance of customer and agent
-7. Cashout 500 tk from the customer
-8. Check the balance of customer again
+## How to run this project:
 
-## Prerequisite
-- JDK 8 or higher
-- java IDE
-- configure JAVA_HOME and GRADLE_HOME
+- Clone this project
+- hit the following command: ```gradle clean test```
+- for Allure Report hit: ```allure generate allure-results --clean -o allure-report``` and ```allure serve allure-results```
 
-## How to run this project
-- clone this project
-- hit the following command into the terminal:
-  `gradle clean test`
+## Project Scenerio: 
 
-## Command for Allure Report
-- After run the project give the following command for generate Allure Report
-
-  `allure generate allure-results --clean -o allure-report`
-  
-  `allure serve allure-results`  
+ - Call login API
+ - Create  a new customer and an agent
+ - Search by the customer phone number
+ - Deposit 5000 tk to the Agent from system
+ - Deposit 2000 tk by agent to customer 
+ - Check balance of customer
+ - Check statement by trnxId 
+ - Withdraw 1000 tk by customer and assert expected balance
+ - Send 500 tk to another customer and assert expected balance
+ - Check customer statement
   
 ## Allure Report  
 ![Screenshot (10)](https://user-images.githubusercontent.com/29010350/205638378-936b0eed-c65f-4678-8c1b-17bb2d2ed442.png)
